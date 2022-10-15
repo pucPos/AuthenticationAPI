@@ -13,7 +13,7 @@ namespace AuthenticationAPI.Repository
             var database = client.GetDatabase("test");
             var collection = database.GetCollection<BsonDocument>("usuarios");
 
-            var filter = Builders<BsonDocument>.Filter.Eq("email", "heitorpro@gmail.com");
+            var filter = Builders<BsonDocument>.Filter.Eq("email", usuario.Email);
             var user = collection.Find(filter).FirstOrDefault();
             var usuarioConvertido = user.ToBsonDocument();
             if (usuario.Senha == usuarioConvertido["senha"].AsString){

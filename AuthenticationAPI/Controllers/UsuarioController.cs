@@ -25,7 +25,6 @@ namespace AuthenticationAPI.Controllers
                     return false;
                 }
             }
-
             catch (Exception erro)
             {
                 return false;
